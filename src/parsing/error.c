@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/30 17:43:16 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/04 13:23:08 by julauren         ###   ########.fr       */
+/*   Created: 2026/07/01 08:01:09 by julauren          #+#    #+#             */
+/*   Updated: 2026/07/01 08:55:44 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/parsing.h"
 
-void	parsing(char *str)
+void	error_parsing(t_error error)
 {
-	int		fd;
-	t_path	path;
-	t_color	color;
-
-	fd = open(str, O_RDONLY);
-	if (fd < 0)
-		error_parsing(FD);
-	init_struct(&path, &color);
+	if (error == FD)
+		ft_putstr_fd("Error: Invalid fd.\n", 2);
+	else if (error == MALLOC)
+		ft_putstr_fd("Error: Memory allocation failure", 2);
+	exit(EXIT_FAILURE);
 }
