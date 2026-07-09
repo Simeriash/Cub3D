@@ -6,30 +6,33 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/04 11:18:26 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/04 13:31:50 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/04 15:12:45 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/parsing.h"
 
-void	init_struct(t_path *path, t_color *color)
+void	free_struct(t_data data, char **tab)
 {
-	ft_bzero(path, sizeof(*path));
-	ft_bzero(color, sizeof(*color));
-}
+	int	i;
 
-void	free_struct(t_path path, t_color color)
-{
-	if (path.NO)
-		free(path.NO);
-	if (path.SO)
-		free(path.SO);
-	if (path.WE)
-		free(path.WE);
-	if (path.EA)
-		free(path.EA);
-	if (color.F)
-		free(color.F);
-	if (color.C)
-		free(color.C);
+	if (data.NO)
+		free(data.NO);
+	if (data.SO)
+		free(data.SO);
+	if (data.WE)
+		free(data.WE);
+	if (data.EA)
+		free(data.EA);
+	if (data.F)
+		free(data.F);
+	if (data.C)
+		free(data.C);
+	if (tab)
+	{
+		i = 0;
+		while (tab[i])
+			free(tab[i++]);
+		free(tab);
+	}
 }
