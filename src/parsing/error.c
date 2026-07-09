@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 08:01:09 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/01 08:55:44 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/09 17:34:53 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	error_parsing(t_error error)
 {
-	if (error == FD)
-		ft_putstr_fd("Error: Invalid fd.\n", 2);
-	else if (error == MALLOC)
-		ft_putstr_fd("Error: Memory allocation failure", 2);
+	if (error == MALLOC)
+		ft_putstr_fd("Error: Memory allocation failure.\n", 2);
+	else if (error == INPUT)
+		ft_putstr_fd("Error: Wrong Input.\n", 2);
 	exit(EXIT_FAILURE);
 }
