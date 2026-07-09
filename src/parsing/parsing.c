@@ -6,20 +6,34 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 17:43:16 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/04 13:23:08 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/09 17:21:31 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/parsing.h"
 
-void	parsing(char *str)
+void	print_data(t_data *data)
 {
-	int		fd;
-	t_path	path;
-	t_color	color;
+	printf("NO: %s\n", data->NO);
+	printf("SO: %s\n", data->SO);
+	printf("WE: %s\n", data->WE);
+	printf("EA: %s\n", data->EA);
+	printf("F: %i\t%i\t%i\n", data->F[0], data->F[1], data->F[2]);
+	printf("C: %i\t%i\t%i\n", data->C[0], data->C[1], data->C[2]);
+}
 
-	fd = open(str, O_RDONLY);
-	if (fd < 0)
-		error_parsing(FD);
-	init_struct(&path, &color);
+char	**parsing(char *str, t_data *data)
+{
+	t_param	param;
+	char	**map;
+
+	map = NULL;
+	param.file = ft_read_file(str);
+	if (!param.file)
+		error_parsing(MALLOC);
+	check_data(param, data);
+	print_data(data);
+	free_struct(data, NULL);
+	free(param.file);
+	return (map);
 }
