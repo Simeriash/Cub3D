@@ -12,29 +12,9 @@ OBJ_DIR = obj
 # Executable
 NAME = cub3D
 
-USRPATH = $(shell pwd)
-
 # Sources
 SRCS = $(SRC_DIR)/cub3D.c \
-	#    $(BUILTINS_DIR)/get_builtin.c \
-    #    $(BUILTINS_DIR)/echo/ft_echo.c \
-    #    $(BUILTINS_DIR)/cd/ft_cd.c \
-    #    $(BUILTINS_DIR)/exit/ft_exit.c $(BUILTINS_DIR)/exit/ft_exit_utils.c \
-	#    $(BUILTINS_DIR)/pwd/ft_pwd.c \
-	#    $(BUILTINS_DIR)/env/ft_env.c \
-	#    $(BUILTINS_DIR)/utils/builtin_utils.c $(BUILTINS_DIR)/utils/builtin_utils2.c \
-	#    $(BUILTINS_DIR)/unset/ft_unset.c \
-	#    $(BUILTINS_DIR)/export/export_in_order_utils.c $(BUILTINS_DIR)/export/export_utils.c \
-	#    $(BUILTINS_DIR)/export/ft_export.c $(BUILTINS_DIR)/export/export_helpers.c \
-	#    $(SRC_DIR)/exec/execute_cmd.c $(SRC_DIR)/exec/execute_cmd_child.c $(SRC_DIR)/exec/executor.c $(SRC_DIR)/exec/exec_cmd_utils.c \
-	#    $(SRC_DIR)/exec/find_exec.c $(SRC_DIR)/exec/make_env_array.c \
-	#    $(SRC_DIR)/exec/handle_builtin.c $(SRC_DIR)/exec/handle_builtin_helpers.c\
-	#    $(SRC_DIR)/envc/envc_utils.c $(SRC_DIR)/envc/envc.c $(SRC_DIR)/envc/error.c $(SRC_DIR)/envc/linked_list.c \
-	#    $(SRC_DIR)/heredoc/error.c $(SRC_DIR)/heredoc/expand.c $(SRC_DIR)/heredoc/heredoc_utils.c $(SRC_DIR)/heredoc/heredoc.c $(SRC_DIR)/heredoc/signal.c \
-	#    $(SRC_DIR)/lexer/error.c $(SRC_DIR)/lexer/lexer_utils.c $(SRC_DIR)/lexer/lexer.c $(SRC_DIR)/lexer/linked_list.c \
-	#    $(SRC_DIR)/parser/ast.c $(SRC_DIR)/parser/cmd_utils.c $(SRC_DIR)/parser/cmd.c $(SRC_DIR)/parser/delete_quotes.c $(SRC_DIR)/parser/error.c \
-	#    $(SRC_DIR)/parser/expand_utils.c $(SRC_DIR)/parser/expand.c $(SRC_DIR)/parser/more_token.c $(SRC_DIR)/parser/parser.c $(SRC_DIR)/parser/parser_utils.c
-
+		$(SRC_DIR)/parsing/parsing.c $(SRC_DIR)/parsing/parsing_utils.c $(SRC_DIR)/parsing/error.c \
 
 # Object files in obj/ folder
 OBJS = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
@@ -49,7 +29,7 @@ INC_FLAGS = -I$(INC_DIR) -I$(LIBFT_DIR) -Irea
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -lreadline -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 # Compile objects, creating subdirectories if needed
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
@@ -70,6 +50,6 @@ fclean: clean
 re: fclean all
 
 valgrind:
-	clear && valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes --trace-children=yes --suppressions=$(USRPATH)/readline.supp ./cub3D
+	clear && valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes ./cub3D maps/map.cub
 
 .PHONY: all clean fclean re valgrind
