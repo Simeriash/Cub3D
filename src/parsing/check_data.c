@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 11:46:38 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/09 17:23:26 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/09 17:56:22 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ static int	next_number(char *src, int *i, t_param param)
 	if (!str)
 		free_error(src, param, NULL, MALLOC);
 	j = 0;
-	// printf("%s\n", str);
 	while (str[j] && ft_isdigit(str[j]))
 		j++;
 	if (str[j] != '\0' || ft_atoi(str, &nb))
@@ -119,13 +118,11 @@ void	check_data(t_param param, t_data *data)
 	while (1)
 	{
 		end = next_line(param.file, start);
-		// printf("start: %i\tend: %i\n", start, end);
 		if (end == -1)
 			break ;
 		if (!empty_line(param.file, start, end))
 		{
 			str = ft_substr(param.file, start, end - start + 1);
-			// printf("%s\n", str);
 			if (!str)
 				free_error(NULL, param, NULL, MALLOC);
 			if (add_data(str, data, param))
