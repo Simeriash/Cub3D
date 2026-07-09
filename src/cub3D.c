@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 16:21:20 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/01 08:20:52 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/04 15:30:37 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ static void	error_arg(int ac, char **av)
 
 int	main(int ac, char **av)
 {
+	t_data	data;
+
 	error_arg(ac, av);
-	parsing(av[1]);
+	ft_bzero(&data, sizeof(data));
+	parsing(av[1], &data);
 }
