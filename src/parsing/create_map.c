@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 09:36:28 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/10 15:34:56 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/10 16:24:30 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,14 +78,14 @@ static int	empty_row(char **tab)
 	return (nb);
 }
 
-void	create_map(char ***map, int n, t_param param)
+void	create_map(char ***map, int n, t_param *param)
 {
 	char	**tab;
 	int		nb;
 
-	tab = first_tab(param, n);
+	tab = first_tab(*param, n);
 	nb = empty_row(tab);
-	*map = clear_map(tab, nb, param);
-	free(param.file);
-	param.file = NULL;
+	*map = clear_map(tab, nb, *param);
+	free(param->file);
+	param->file = NULL;
 }

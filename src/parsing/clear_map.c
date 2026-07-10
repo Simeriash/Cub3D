@@ -6,13 +6,13 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 14:16:39 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/10 15:05:22 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/10 15:50:27 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/parsing.h"
 
-static int	tab_len(char **tab)
+int	tab_len(char **tab)
 {
 	int	i;
 

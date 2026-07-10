@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 17:42:38 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/10 14:48:58 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/10 16:24:04 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 typedef enum e_error
 {
 	MALLOC,
-	INPUT
+	INPUT,
+	MAP
 }	t_error;
 
 typedef struct s_param
@@ -31,7 +32,7 @@ typedef struct s_param
 }	t_param;
 
 int		check_data(t_param *param, t_data *data);
-void	create_map(char ***map, int n, t_param param);
+void	create_map(char ***map, int n, t_param *param);
 char	**clear_map(char **tab, int n, t_param param);
 void	check_map(char **map, t_param param);
 
@@ -41,6 +42,7 @@ void	free_struct(t_data *data, char **map);
 int		empty_line(char *str, int start, int end);
 int		next_line(char *str, int start);
 void	control_data(t_param param);
+int		tab_len(char **tab);
 int		end_of_file(char *file, int n);
 void	free_tab(char **tab);
 
