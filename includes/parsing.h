@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 17:42:38 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/09 18:09:31 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/10 08:38:11 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef enum e_error
 	INPUT
 }	t_error;
 
-typedef struct	s_param
+typedef struct s_param
 {
 	t_data	*data;
 	char	*file;

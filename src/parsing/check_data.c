@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 11:46:38 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/09 18:09:08 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/10 08:45:57 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ static void	add_str(char **dest, char *src, int i, t_param param)
 
 	i += 2;
 	if (!ft_isspace(src[i]))
-	{
-		free(src);
-		free_error(NULL, param, NULL, INPUT);
-	}
+		free_error(src, param, NULL, INPUT);
 	while (src[i] && ft_isspace(src[i]))
 		i++;
 	end = i;
@@ -64,10 +61,7 @@ static void	add_int(int **dest, char *src, int i, t_param param)
 	int	n;
 
 	if (!ft_isspace(src[i + 1]))
-	{
-		free(src);
-		free_error(NULL, param, NULL, INPUT);
-	}
+		free_error(src, param, NULL, INPUT);
 	*dest = malloc(sizeof(**dest) * 3);
 	if (!(*dest))
 		free_error(src, param, NULL, MALLOC);
@@ -87,18 +81,18 @@ static int	add_data(char *str, t_data *data, t_param param)
 	i = 0;
 	while (ft_isspace(str[i]))
 		i++;
-	if (!data->NO && !ft_memcmp(&str[i], "NO", 2))
-		add_str(&data->NO, str, i, param);
-	else if (!data->SO && !ft_memcmp(&str[i], "SO", 2))
-		add_str(&data->SO, str, i, param);
-	else if (!data->WE && !ft_memcmp(&str[i], "WE", 2))
-		add_str(&data->WE, str, i, param);
-	else if (!data->EA && !ft_memcmp(&str[i], "EA", 2))
-		add_str(&data->EA, str, i, param);
-	else if (!data->F && !ft_memcmp(&str[i], "F", 1))
-		add_int(&data->F, str, i, param);
-	else if (!data->C && !ft_memcmp(&str[i], "C", 1))
-		add_int(&data->C, str, i, param);
+	if (!data->no && !ft_memcmp(&str[i], "NO", 2))
+		add_str(&data->no, str, i, param);
+	else if (!data->so && !ft_memcmp(&str[i], "SO", 2))
+		add_str(&data->so, str, i, param);
+	else if (!data->we && !ft_memcmp(&str[i], "WE", 2))
+		add_str(&data->we, str, i, param);
+	else if (!data->ea && !ft_memcmp(&str[i], "EA", 2))
+		add_str(&data->ea, str, i, param);
+	else if (!data->f && !ft_memcmp(&str[i], "F", 1))
+		add_int(&data->f, str, i, param);
+	else if (!data->c && !ft_memcmp(&str[i], "C", 1))
+		add_int(&data->c, str, i, param);
 	else
 	{
 		free(str);

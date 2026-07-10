@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 16:43:17 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/09 16:55:02 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/10 08:46:02 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 
 typedef struct s_data
 {
-	char	*NO;
-	char	*SO;
-	char	*WE;
-	char	*EA;
-	int		*F;
-	int		*C;
+	char	*no;
+	char	*so;
+	char	*we;
+	char	*ea;
+	int		*f;
+	int		*c;
 }	t_data;
 
 char	**parsing(char *str, t_data *data);

@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/04 11:18:26 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/09 17:24:08 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/10 08:45:57 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@ void	free_struct(t_data *data, char **map)
 {
 	int	i;
 
-	if (data->NO)
-		free(data->NO);
-	if (data->SO)
-		free(data->SO);
-	if (data->WE)
-		free(data->WE);
-	if (data->EA)
-		free(data->EA);
-	if (data->F)
-		free(data->F);
-	if (data->C)
-		free(data->C);
+	if (data->no)
+		free(data->no);
+	if (data->so)
+		free(data->so);
+	if (data->we)
+		free(data->we);
+	if (data->ea)
+		free(data->ea);
+	if (data->f)
+		free(data->f);
+	if (data->c)
+		free(data->c);
 	if (map)
 	{
 		i = 0;
