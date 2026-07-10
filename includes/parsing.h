@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 17:42:38 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/09 17:36:16 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/09 18:09:31 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct	s_param
 	char	*file;
 }	t_param;
 
-void	check_data(t_param param, t_data *data);
+int		check_data(t_param param, t_data *data);
 
 /*====================utils====================*/
 

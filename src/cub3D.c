@@ -6,11 +6,11 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 16:21:20 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/09 17:58:35 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/09 18:04:57 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3D.h"
+#include "../includes/parsing.h"
 
 static void	error_arg(int ac, char **av)
 {
@@ -38,4 +38,5 @@ int	main(int ac, char **av)
 	error_arg(ac, av);
 	ft_bzero(&data, sizeof(data));
 	parsing(av[1], &data);
+	free_struct(&data, NULL);
 }

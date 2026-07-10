@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 11:46:38 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/09 17:56:22 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/09 18:09:08 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ static int	add_data(char *str, t_data *data, t_param param)
 	return (0);
 }
 
-void	check_data(t_param param, t_data *data)
+int	check_data(t_param param, t_data *data)
 {
 	int		start;
 	int		end;
@@ -130,4 +130,5 @@ void	check_data(t_param param, t_data *data)
 		}
 		start = end + 1;
 	}
+	return (start);
 }
