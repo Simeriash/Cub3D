@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 11:46:38 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/10 09:27:20 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/10 12:43:32 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,5 +124,6 @@ int	check_data(t_param *param, t_data *data)
 		}
 		start = end + 1;
 	}
+	control_data(*param);
 	return (start);
 }
