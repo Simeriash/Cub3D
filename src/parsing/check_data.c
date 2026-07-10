@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 11:46:38 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/10 08:45:57 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/10 09:27:20 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,25 +101,25 @@ static int	add_data(char *str, t_data *data, t_param param)
 	return (0);
 }
 
-int	check_data(t_param param, t_data *data)
+int	check_data(t_param *param, t_data *data)
 {
 	int		start;
 	int		end;
 	char	*str;
 
-	param.data = data;
+	param->data = data;
 	start = 0;
 	while (1)
 	{
-		end = next_line(param.file, start);
+		end = next_line(param->file, start);
 		if (end == -1)
 			break ;
-		if (!empty_line(param.file, start, end))
+		if (!empty_line(param->file, start, end))
 		{
-			str = ft_substr(param.file, start, end - start + 1);
+			str = ft_substr(param->file, start, end - start + 1);
 			if (!str)
-				free_error(NULL, param, NULL, MALLOC);
-			if (add_data(str, data, param))
+				free_error(NULL, *param, NULL, MALLOC);
+			if (add_data(str, data, *param))
 				break ;
 		}
 		start = end + 1;

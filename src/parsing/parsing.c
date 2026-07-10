@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 17:43:16 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/10 08:45:57 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/10 09:26:00 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ char	**parsing(char *str, t_data *data)
 	param.file = ft_read_file(str);
 	if (!param.file)
 		error_parsing(MALLOC);
-	i = check_data(param, data);
+	i = check_data(&param, data);
 	// printf("%i\t%c\n", i, param.file[i]);
-	print_data(data);
+	print_data(param.data);
+	// map = check_map(param, i);
 	free(param.file);
 	return (map);
 }

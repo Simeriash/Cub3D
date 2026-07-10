@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 17:42:38 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/10 08:38:11 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/10 09:26:30 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ typedef struct s_param
 	char	*file;
 }	t_param;
 
-int		check_data(t_param param, t_data *data);
+int		check_data(t_param *param, t_data *data);
+char	**check_map(t_param param, int n);
 
 /*====================utils====================*/
 
