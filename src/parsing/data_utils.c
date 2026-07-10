@@ -6,12 +6,11 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/04 11:18:26 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/10 12:46:54 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/10 15:19:37 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/parsing.h"
-#include <stdio.h>
 
 void	free_struct(t_data *data, char **map)
 {
@@ -71,7 +70,8 @@ void	free_error(char *str, t_param param, char **map, t_error error)
 	if (str)
 		free(str);
 	free_struct(param.data, map);
-	free(param.file);
+	if (param.file)
+		free(param.file);
 	error_parsing(error);
 }
 

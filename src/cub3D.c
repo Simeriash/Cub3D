@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 16:21:20 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/09 18:04:57 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/10 15:16:40 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ static void	error_arg(int ac, char **av)
 int	main(int ac, char **av)
 {
 	t_data	data;
+	char	**map;
 
 	error_arg(ac, av);
 	ft_bzero(&data, sizeof(data));
-	parsing(av[1], &data);
-	free_struct(&data, NULL);
+	map = parsing(av[1], &data);
+	free_struct(&data, map);
 }
