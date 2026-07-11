@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 17:43:16 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/10 15:20:34 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/11 08:48:01 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ void	print_data(t_data *data, char **map)
 
 static void	error_input(char *file)
 {
-	if (!file || file[0] == '\0')
+	if (!file)
+		error_parsing(MALLOC);
+	if (file[0] == '\0')
 		error_parsing(INPUT);
 }
 
@@ -39,8 +41,8 @@ char	**parsing(char *str, t_data *data)
 	param.file = ft_read_file(str);
 	error_input(param.file);
 	i = check_data(&param, data);
-	create_map(&map, i, param);
+	create_map(&map, i, &param);
 	print_data(param.data, map);
-	// map = check_map(param, i);
+	// check_map(map, param);
 	return (map);
 }
