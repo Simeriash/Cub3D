@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 09:36:28 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/10 16:24:30 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/11 11:06:35 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static char	**first_tab(t_param param, int n)
 	if (!str)
 		free_error(NULL, param, NULL, MALLOC);
 	if (ft_strnstr(str, "\n\n", ft_strlen(str)) >= 0)
-		free_error(str, param, NULL, INPUT);
+		free_error(str, param, NULL, MAP);
 	tab = ft_split(str, '\n');
 	if (!tab)
 		free_error(str, param, NULL, MALLOC);
