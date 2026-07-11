@@ -14,7 +14,8 @@ NAME = cub3D
 
 # Sources
 SRCS = $(SRC_DIR)/cub3D.c \
-		$(SRC_DIR)/parsing/parsing.c $(SRC_DIR)/parsing/check_data.c $(SRC_DIR)/parsing/parsing_utils.c $(SRC_DIR)/parsing/error.c \
+		$(SRC_DIR)/parsing/parsing.c $(SRC_DIR)/parsing/check_data.c $(SRC_DIR)/parsing/data_utils.c $(SRC_DIR)/parsing/error.c \
+		$(SRC_DIR)/parsing/create_map.c $(SRC_DIR)/parsing/clear_map.c $(SRC_DIR)/parsing/check_map.c
 
 # Object files in obj/ folder
 OBJS = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
@@ -50,6 +51,6 @@ fclean: clean
 re: fclean all
 
 valgrind:
-	clear && valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes ./cub3D maps/map.cub
+	clear && valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes ./cub3D maps/map2.cub
 
 .PHONY: all clean fclean re valgrind

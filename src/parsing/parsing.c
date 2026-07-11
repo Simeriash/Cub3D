@@ -6,11 +6,13 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 17:43:16 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/11 08:48:01 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/11 10:24:03 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/parsing.h"
+
+//	/!\	A DELETE
 
 void	print_data(t_data *data, char **map)
 {
@@ -43,6 +45,6 @@ char	**parsing(char *str, t_data *data)
 	i = check_data(&param, data);
 	create_map(&map, i, &param);
 	print_data(param.data, map);
-	// check_map(map, param);
+	check_map(map, param);
 	return (map);
 }
