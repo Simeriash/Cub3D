@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/04 11:18:26 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/10 15:19:37 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/11 07:36:39 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	empty_line(char *str, int start, int end)
 	if (start > end)
 		return (0);
 	i = start;
-	while (str[i] && ft_isspace(str[i]) && i <= end)
+	while (str[i] && (str[i] == ' ' || str[i] == '\n') && i <= end)
 		i++;
 	if (str[i] == '\0' || i == end + 1)
 		return (1);

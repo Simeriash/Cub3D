@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 11:46:38 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/10 14:10:42 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/11 08:43:53 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@ static void	add_str(char **dest, char *src, int i, t_param param)
 	int	end;
 
 	i += 2;
-	if (!ft_isspace(src[i]))
+	if (src[i] != ' ')
 		free_error(src, param, NULL, INPUT);
-	while (src[i] && ft_isspace(src[i]))
+	while (src[i] && src[i] == ' ')
 		i++;
+	if (!ft_isprint(src[i]))
+		free_error(src, param, NULL, INPUT);
 	end = i;
-	while (src[i] && !ft_isspace(src[end]))
+	while (src[end] && src[end] != ' ' && ft_isprint(src[end]))
 		end++;
 	*dest = ft_substr(src, i, end - i);
 	free(src);
@@ -37,7 +39,7 @@ static int	next_number(char *src, int *i, t_param param)
 	char	*str;
 
 	j = *i;
-	while (src[*i] && !(ft_isspace(src[*i]) || src[*i] == ','))
+	while (src[*i] && !(src[*i] == ' ' || src[*i] == ','))
 		(*i)++;
 	str = ft_substr(src, j, *i - j);
 	if (!str)
@@ -51,7 +53,7 @@ static int	next_number(char *src, int *i, t_param param)
 		free_error(src, param, NULL, INPUT);
 	}
 	free(str);
-	while (src[*i] && (ft_isspace(src[*i]) || src[*i] == ','))
+	while (src[*i] && (src[*i] == ' ' || src[*i] == ','))
 		(*i)++;
 	return (nb);
 }
@@ -60,13 +62,13 @@ static void	add_int(int **dest, char *src, int i, t_param param)
 {
 	int	n;
 
-	if (!ft_isspace(src[i + 1]))
+	i++;
+	if (src[i] != ' ')
 		free_error(src, param, NULL, INPUT);
 	*dest = malloc(sizeof(**dest) * 3);
 	if (!(*dest))
 		free_error(src, param, NULL, MALLOC);
-	i++;
-	while (src[i] && ft_isspace(src[i]))
+	while (src[i] && src[i] == ' ')
 		i++;
 	n = 0;
 	while (n < 3)
@@ -79,7 +81,7 @@ static int	add_data(char *str, t_data *data, t_param param)
 	int	i;
 
 	i = 0;
-	while (ft_isspace(str[i]))
+	while (str[i] == ' ')
 		i++;
 	if (!data->no && !ft_memcmp(&str[i], "NO", 2))
 		add_str(&data->no, str, i, param);
@@ -116,7 +118,7 @@ int	check_data(t_param *param, t_data *data)
 			break ;
 		if (!empty_line(param->file, start, end))
 		{
-			str = ft_substr(param->file, start, end - start + 1);
+			str = ft_substr(param->file, start, end - start);
 			if (!str)
 				free_error(NULL, *param, NULL, MALLOC);
 			if (add_data(str, data, *param))
