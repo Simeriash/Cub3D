@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 16:43:17 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/10 08:46:02 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/14 12:15:36 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CUB3D_H
 
 # include "../libft/libft.h"
+# include "../MLX42/include/MLX42/MLX42.h"
 # include <stdio.h>
 # include <stdlib.h>
 
