@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/04 11:18:26 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/11 07:36:39 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/14 10:01:48 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,6 @@ void	control_data(t_param param)
 	if (!param.data->no || !param.data->so || !param.data->we || !param.data->ea
 		|| !param.data->f || !param.data->c)
 	{
-		free_error(NULL, param, NULL, INPUT);
+		free_error(NULL, param, NULL, MISSING);
 	}
 }

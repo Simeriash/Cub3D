@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 08:24:18 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/11 13:39:28 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/14 10:31:01 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ static int	wrong_char(char **map, int n)
 	while (i < n)
 	{
 		j = 0;
-		while (map[i][j] == ' ' || map[i][j] == '1')
+		while (map[i][j] == ' ')
 			j++;
-		if (j == 0)
+		if (map[i][j] != '1' && map[i][j] != '\0')
 			return (1);
 		while (map[i][j])
 		{
@@ -100,5 +100,5 @@ void	check_map(char **map, t_param param)
 		}
 	}
 	if (player != 1)
-		free_error(NULL, param, map, MAP);
+		free_error(NULL, param, map, PLAYER);
 }

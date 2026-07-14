@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 17:42:38 by julauren          #+#    #+#             */
-/*   Updated: 2026/07/10 16:24:04 by julauren         ###   ########.fr       */
+/*   Updated: 2026/07/14 10:04:36 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,12 @@ typedef enum e_error
 {
 	MALLOC,
 	INPUT,
-	MAP
+	FILES,
+	EMPTY,
+	MISSING,
+	EMPTY_LINE,
+	MAP,
+	PLAYER
 }	t_error;
 
 typedef struct s_param
