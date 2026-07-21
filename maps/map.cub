@@ -1,9 +1,9 @@
-NO ./path_to_the_north_texture
-SO ./path_to_the_south_texture
-WE ./path_to_the_west_texture
-EA ./path_to_the_east_texture
+NO /textures/redbrick.png
+SO /textures/colorstone.png
+WE /textures/mossy.png
+EA /textures/greystone.png
 
-F 220,100,0
+F 130,130,130
 C 225,30,0
 
 

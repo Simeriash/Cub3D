@@ -60,6 +60,6 @@ fclean: clean
 re: fclean all
 
 valgrind:
-	clear && valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes ./cub3D maps/map2.cub
+	clear && valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes ./cub3D maps/map.cub
 
 .PHONY: all clean fclean re valgrind libmlx
